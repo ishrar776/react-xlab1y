@@ -23,7 +23,7 @@ export default function Ccom(props) {
   };
   return (
     <div>
-      <h1>Child to Parent propgation {count}</h1>
+      <h1>Child to Parent propgation {!count == 0 && count}</h1>
       <p>
         <select text="txtReason" name="txtreason" onChange={findselect}>
           {drpvalue.map((item) => (
