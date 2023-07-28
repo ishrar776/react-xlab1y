@@ -19,7 +19,6 @@ export default function Ccom(props) {
   }, []);
   const startCount = () => {
     setCount(count + 1);
-    console.log('jey israr');
   };
   return (
     <div>
