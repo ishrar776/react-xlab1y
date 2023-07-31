@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './style.css';
 import Bcom from './Bcom';
-
+import useWindowSize from './hook';
 export default function App() {
   const [values, setValues] = useState({
     txtname: '',
@@ -76,6 +76,7 @@ export default function App() {
       <p>
         <Bcom discribeFun={values.txtreason} />
       </p>
+      <p>{useWindowSize}</p>
     </div>
   );
 }
