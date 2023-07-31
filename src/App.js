@@ -8,6 +8,8 @@ export default function App() {
     txtreason: '',
   });
   const [submit, setSubmit] = useState(false);
+  const { width, height } = useWindowSize();
+  //console.log('values object is ' + JSON.stringify({useWindowSize}));
   const enterYourId = (e) => {
     const name = e.target.name;
     const value = e.target.value;
@@ -76,7 +78,10 @@ export default function App() {
       <p>
         <Bcom discribeFun={values.txtreason} />
       </p>
-      <p>{useWindowSize}</p>
+      <p>
+        {' '}
+        width is {width} and height is {height}
+      </p>
     </div>
   );
 }
