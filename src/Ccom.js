@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './style.css';
-
+import useAxiosFetch from './useAxiosFetch';
 export default function Ccom(props) {
   const url = 'https://jsonplaceholder.typicode.com/users';
   const [drpvalue, setDrpValue] = useState([]);
@@ -9,14 +9,18 @@ export default function Ccom(props) {
     props.topvalue(e.target.value);
     console.log('pass value from parent to child' + e.target.value);
   };
+  const { data, fetchError, isLoading } = useAxiosFetch(url);
   useEffect(() => {
-    fetch(url)
-      .then((response) => response.json())
-      .then((d) => setDrpValue(d))
-      .catch((error) => {
-        console.log('It seem some error' + error);
-      });
-  }, []);
+    setDrpValue(data);
+  }, [data]);
+  // useEffect(() => {
+  //   fetch(url)
+  //     .then((response) => response.json())
+  //     .then((d) => setDrpValue(d))
+  //     .catch((error) => {
+  //       console.log('It seem some error' + error);
+  //     });
+  // }, []);
   const startCount = () => {
     setCount(count + 1);
   };
