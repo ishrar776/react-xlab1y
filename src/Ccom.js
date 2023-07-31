@@ -9,18 +9,18 @@ export default function Ccom(props) {
     props.topvalue(e.target.value);
     console.log('pass value from parent to child' + e.target.value);
   };
-  const { data, fetchError, isLoading } = useAxiosFetch(url);
-  useEffect(() => {
-    setDrpValue(data);
-  }, [data]);
+  // const { data, fetchError, isLoading } = useAxiosFetch(url);
   // useEffect(() => {
-  //   fetch(url)
-  //     .then((response) => response.json())
-  //     .then((d) => setDrpValue(d))
-  //     .catch((error) => {
-  //       console.log('It seem some error' + error);
-  //     });
-  // }, []);
+  //   setDrpValue(data);
+  // }, [data]);
+  useEffect(() => {
+    fetch(url)
+      .then((response) => response.json())
+      .then((d) => setDrpValue(d))
+      .catch((error) => {
+        console.log('It seem some error' + error);
+      });
+  }, []);
   const startCount = () => {
     setCount(count + 1);
   };
