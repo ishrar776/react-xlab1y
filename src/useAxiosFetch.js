@@ -13,7 +13,7 @@ const useAxiosFetch = (dataUrl) => {
     const fetchData = async (url) => {
       setIsLoading(true);
       try {
-        const response = await axios.get(url, {
+        const response = await Axios.get(url, {
           cancelToken: source.token,
         });
         if (isMounted) {
