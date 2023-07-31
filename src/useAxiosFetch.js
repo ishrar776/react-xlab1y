@@ -11,7 +11,7 @@ const useAxiosFetch = (dataUrl) => {
     //const source = axios.CancelToken.source();
     fetch(dataUrl)
       .then((response) => response.json())
-      .then((d) => setDrpValue(d))
+      .then((d) => setData(d))
       .catch((error) => {
         console.log('It seem some error' + error);
       });
